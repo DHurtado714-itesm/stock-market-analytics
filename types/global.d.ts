@@ -14,7 +14,7 @@ declare global {
     preferredIndustry: string;
   };
 
-  type CountrySelectProps = {
+  type CountrySelectFieldProps = {
     name: string;
     label: string;
     control: Control;
