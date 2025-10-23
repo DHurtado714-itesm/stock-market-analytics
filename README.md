@@ -69,3 +69,8 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 The easiest way to deploy is using the [Vercel Platform](https://vercel.com/new).
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/stock-market-analytics)
+
+## TODO
+
+- Watchlist
+- Alerts
