@@ -32,4 +32,4 @@ export const getAuth = async () => {
   return authInstance;
 };
 
-export const auth = getAuth();
+export const auth = await getAuth();
