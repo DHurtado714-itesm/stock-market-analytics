@@ -21,7 +21,7 @@ function InputField({
         type={type}
         id={name}
         placeholder={placeholder}
-        error={!!error}
+        aria-invalid={!!error}
         className={cn("form-input", {
           "opacity-50 cursor-not-allowed": disabled,
         })}
