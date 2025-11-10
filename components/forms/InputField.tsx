@@ -24,6 +24,7 @@ function InputField({
         aria-invalid={!!error}
         className={cn("form-input", {
           "opacity-50 cursor-not-allowed": disabled,
+          "border-red-500 focus-visible:ring-red-500": error,
         })}
         {...register(name, validation)}
       />

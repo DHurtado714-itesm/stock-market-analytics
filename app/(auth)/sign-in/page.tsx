@@ -15,6 +15,7 @@ const SignIn = () => {
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors, isSubmitting },
   } = useForm<SignInFormData>({
     defaultValues: {
@@ -30,11 +31,25 @@ const SignIn = () => {
       if (result.success) {
         router.push("/");
         toast.success(result.message);
+      } else {
+        setError("password", {
+          type: "manual",
+          message: result.message,
+        });
+        toast.error("Sign in failed", {
+          description: result.message,
+        });
       }
     } catch (e) {
       console.error(e);
+      const errorMessage =
+        e instanceof Error ? e.message : "Failed to sign in.";
+      setError("password", {
+        type: "manual",
+        message: errorMessage,
+      });
       toast.error("Sign in failed", {
-        description: e instanceof Error ? e.message : "Failed to sign in.",
+        description: errorMessage,
       });
     }
   };

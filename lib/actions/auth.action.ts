@@ -58,6 +58,8 @@ export const signInWithEmail = async ({ email, password }: SignInFormData) => {
     return { success: true, message: "Sign in successful", data: response };
   } catch (error) {
     console.error(error);
-    return { success: false, message: "Failed to sign up" };
+    const errorMessage =
+      error instanceof Error ? error.message : "Invalid email or password";
+    return { success: false, message: errorMessage };
   }
 };
